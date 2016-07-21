@@ -63,12 +63,16 @@ body{
 		.temp{
 			width: 40%;
 		    float: left;
-		    margin-top: 10%;
+		    margin-top: 7%;
 		    font-size: 55px;
 		    color:lighten($corAzul,10%);
 		    font{
 		        margin-left: -15px;
    				font-size: 30px;
+		    }
+		    .data{
+		    	font-size: 15px;
+		    	color:darken($corBranca,50%);
 		    }
 		}
 		.maxima,
@@ -98,7 +102,54 @@ body{
 		}
 	}
 	.recomendacaoPraia{
+		width: 23.33%;
+		padding: 0% 5%;
 		background: darken($corBranca,10%);
+		.pergunta{
+			font-weight: bold;
+		    text-align: center;
+		    padding-top: 40px;
+		    font-size: 22px;
+		    margin-bottom: 40px;
+		}
+		.imagem{
+			width: 128px;
+			height: 128px;
+			background: url("../../arquivos/beach.png");
+			float: left;
+		}
+		.vaiDarPraia{
+			float: right;
+			width: 50%;
+			text-align: center;
+			margin-top: 15px;
+			&:before{
+			    content: "\f087";
+			    font-family: fontAwesome;
+			    font-size: 45px;
+			    text-align: center;
+			    width: 100%;
+			    display: block;
+			    margin-bottom: 20px;
+			    color:lighten($corAzul,10%);
+			}			
+			&:after{
+				content: "Aproveite o fim de semana para ir a praia!";
+			}
+		}
+		&[data-praia="nao"]{
+			.imagem{
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+			}
+			.vaiDarPraia:before{
+				content: "\f088";
+				color:darken(red,10%);
+			}
+			.vaiDarPraia:after{
+				content: "Melhor ficar em casa, fim de semana não vai dar praia!";
+			}
+		}
 	}
 	.variacaoTemperatura{
 		width: 33.34%;
