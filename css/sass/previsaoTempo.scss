@@ -1,0 +1,107 @@
+@import 'reset.scss';
+@import 'mixins.scss';
+
+$corAzul: #183d69;
+$corBranca: #FFFFFF;
+$corPreta: #333333;
+
+body{
+	background-image: url("../../arquivos/body_clima01.jpg");
+	background-size: cover;
+	font-family: 'Nunito', sans-serif;
+	color:$corPreta;
+}
+
+#previsaoTempo{
+	margin-top:100px;
+	.container{
+		width: 1150px;
+		margin-left: -575px;
+		position: relative;
+		left: 50%;	
+		h1.titulo{
+			position: relative;
+			background: #FFF;
+			width: 30%;
+			padding: 2% 2% 2% 10%;
+			font-size: 35px;
+			color:$corAzul;
+			@include box-shadow(2px -3px 3px $corAzul);
+			&:before{
+				content:"";
+				position: absolute;
+				left:30px;
+				top:5px;
+				width: 64px;
+				height: 64px;
+				background-image: url("../../arquivos/cloudy.png");
+			}
+		}
+	}
+	.proximosDias{
+		background: $corBranca;
+		width: 100%;
+		height: 200px;
+		@include box-shadow(0px 0px 4px $corAzul);
+	}
+	.maximaMinima,
+	.recomendacaoPraia,
+	.variacaoTemperatura{		
+		width: 33.33%;
+		height: 270px;
+		float:left;
+	}
+	.maximaMinima{
+		background: darken($corBranca,5%);
+		.descricao{
+		    width: 45%;
+		    font-weight: bold;
+		    margin: 10% 0% 10% 15%;
+		    float: left;
+		    font-size: 18px;
+		}
+		.temp{
+			width: 40%;
+		    float: left;
+		    margin-top: 10%;
+		    font-size: 55px;
+		    color:lighten($corAzul,10%);
+		    font{
+		        margin-left: -15px;
+   				font-size: 30px;
+		    }
+		}
+		.maxima,
+		.minima{
+		    display: block;
+		    position: relative;
+		    height: 50%;
+		    width: 80%;
+		    margin: 0 auto;
+		    border-bottom:1px solid darken($corBranca,20%);
+		    &:before{
+			    position: absolute;
+			   	content: "\f176";
+			    font-family: fontAwesome;
+			    font-size: 34px;
+			    margin-top: 46px;
+			    left: 20px;
+		    }
+		}
+		.minima{
+			border-top:1px solid darken($corBranca,2%);
+			border-bottom: 0px;
+			&:before{
+			    position: absolute;
+			   	content: "\f175";			 
+			}
+		}
+	}
+	.recomendacaoPraia{
+		background: darken($corBranca,10%);
+	}
+	.variacaoTemperatura{
+		width: 33.34%;
+		background: darken($corBranca,15%);
+	}
+}
